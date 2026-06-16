@@ -37,13 +37,16 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// 2. The Main Mod (Version 2.0.3)
-	modImplementation "maven.modrinth:pale-garden-backport:2.0.3"
-
-	// 3. Core Dependencies for 1.20.1 / Backport 2.0.3
-	modImplementation "maven.modrinth:deltaboxlib:2.2.0"
+	// Use Modrinth version IDs so Gradle resolves the Fabric jars
+	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 	modImplementation "maven.modrinth:architectury-api:9.2.14+fabric"
-	modImplementation "maven.modrinth:terrablender:3.0.1.10"
+	modImplementation "maven.modrinth:terrablender:J1S3aA8i"
+	modImplementation "maven.modrinth:deltaboxlib:c4xDJPXg"
+	modImplementation "maven.modrinth:pale-garden-backport:SIwcEw41"
+
+	// TerraBlender bundles these, but nested jars are not always loaded in the dev classpath
+	implementation "com.electronwill.night-config:core:3.6.7"
+	implementation "com.electronwill.night-config:toml:3.6.7"
 	
 }
 
